@@ -9,13 +9,16 @@ import {
     StyleSheet,
 } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Products from './Products';
+import Reports from './Reports';
+import Search from './Search';
 
 const Dashboard = () => {
     const BottomTabs = createBottomTabNavigator();
     return (
         <BottomTabs.Navigator>
             <BottomTabs.Screen name="Products" component={Products} />
-            <BottomTabs.Screen name="Staff" component={Staff} />
+            {/* <BottomTabs.Screen name="Staff" component={Staff} /> */}
             <BottomTabs.Screen name="Reports" component={Reports} />
             <BottomTabs.Screen name="Search" component={Search} />
         </BottomTabs.Navigator>
