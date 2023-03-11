@@ -4,9 +4,7 @@ import { View, Text, StyleSheet, TextInput } from 'react-native';
 import * as Icons from 'react-native-heroicons/solid';
 import { TouchableOpacity } from 'react-native-web';
 
-// create a component
-
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
     return (
         <View>
             <View style={styles.homeContainer}>
@@ -21,11 +19,26 @@ const HomeScreen = () => {
                     <Text style={styles.logoTextStyle}>Application</Text>
                 </View>
             </View>
-            <View style={styles.homeContainer}>
-                <Text style={styles.textStyle}>Gelos ISS</Text>
-                <Text style={styles.textStyle}>Ultimate Inventory System</Text>
+            <View style={styles.introContainer}>
+                <View style={styles.introWrapper}>
+                    <Text style={styles.textStyle}>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing
+                        elit. Nostrum, alias? Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit. Vero, est. Lorem ipsum
+                        dolor, sit amet consectetur adipisicing elit.
+                        Voluptatum, nemo?
+                    </Text>
+                </View>
+                <TouchableOpacity
+                    onPress={() => {
+                        navigation.navigate('Login');
+                    }}
+                    style={styles.signInBtn}
+                >
+                    <Text style={styles.btnText}>Sign In</Text>
+                </TouchableOpacity>
             </View>
-            <View style={styles.homeContainer}>
+            {/* <View style={styles.homeContainer}>
                 <View>
                     <TextInput
                         placeholder="Username or Email"
@@ -43,18 +56,39 @@ const HomeScreen = () => {
                         </TouchableOpacity>
                     </View>
                 </View>
-            </View>
+            </View> */}
         </View>
     );
 };
 
 // define your styles
 const styles = StyleSheet.create({
+    signInBtn: {
+        alignItems: 'center',
+    },
+    btnText: {
+        width: 150,
+        borderRadius: 30,
+        backgroundColor: '#4338ca',
+        paddingTop: 20,
+        paddingBottom: 20,
+        color: 'white',
+        fontWeight: 'bolder',
+        textAlign: 'center',
+    },
     homeContainer: {
-        paddingTop: 40,
+        flex: 2,
+        paddingTop: 100,
         justifyContent: 'center',
         alignItems: 'center',
     },
+    introContainer: {
+        flex: 3,
+        paddingTop: 20,
+        paddingBottom: 10,
+        alignItems: 'center',
+    },
+    introWrapper: { paddingBottom: 50, width: 250, maxWidth: '100%' },
     box: {
         width: 250,
         height: 150,
@@ -71,7 +105,7 @@ const styles = StyleSheet.create({
     },
     textStyle: {
         color: '13262F',
-        fontSize: 20,
+        fontSize: 16,
         fontWeight: 'bold',
         textAlign: 'center',
     },
