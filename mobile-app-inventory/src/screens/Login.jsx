@@ -9,7 +9,7 @@ import {
     StyleSheet,
 } from 'react-native';
 
-const Login = () => {
+const Login = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <View style={styles.logoContainer}>
@@ -37,7 +37,12 @@ const Login = () => {
                         placeholderTextColor={'#a1a1aa'}
                         secureTextEntry={true}
                     ></TextInput>
-                    <TouchableOpacity style={styles.signinBtn}>
+                    <TouchableOpacity
+                        style={styles.signinBtn}
+                        onPress={() => {
+                            navigation.navigate('Dashboard');
+                        }}
+                    >
                         <Text style={styles.signinBtnText}>Sign In</Text>
                     </TouchableOpacity>
                 </View>
