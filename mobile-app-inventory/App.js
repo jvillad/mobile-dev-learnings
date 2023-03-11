@@ -16,6 +16,7 @@ export default function App() {
         <NavigationContainer>
             <Stack.Navigator>
                 {/* <SafeAreaView style={styles.container}> */}
+                <Stack.Screen name="Home" component={HomeScreen} />
                 <Stack.Screen name="Login" component={Login} />
                 <Stack.Screen name="Dashboard" component={Dashboard} />
                 {/* <Login />
