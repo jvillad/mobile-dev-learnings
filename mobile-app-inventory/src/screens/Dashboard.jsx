@@ -8,12 +8,17 @@ import {
     TouchableOpacity,
     StyleSheet,
 } from 'react-native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 const Dashboard = () => {
+    const BottomTabs = createBottomTabNavigator();
     return (
-        <View style={styles.container}>
-            <Text>Dashboard</Text>
-        </View>
+        <BottomTabs.Navigator>
+            <BottomTabs.Screen name="Products" component={Products} />
+            <BottomTabs.Screen name="Staff" component={Staff} />
+            <BottomTabs.Screen name="Reports" component={Reports} />
+            <BottomTabs.Screen name="Search" component={Search} />
+        </BottomTabs.Navigator>
     );
 };
 
